@@ -3,6 +3,7 @@ import {NavLink, useNavigate} from "react-router-dom";
 import "./Header.css"
 
 const Header:React.FC = () => {
+const Header = () => {
     const navigate = useNavigate()
     return (
         <div className={"header__block"}>
