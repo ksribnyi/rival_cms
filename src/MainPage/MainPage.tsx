@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import "./mainPage.css"
+import "./MainPage.css"
 import "../assets/image/Demo.png"
 import TextContent from "./TextContant/TextContent";
 

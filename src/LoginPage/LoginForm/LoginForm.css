@@ -1,0 +1,128 @@
+.form__block {
+    width: 512px;
+    height: 513px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.form__block__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 30px 34px 30px 42px;
+}
+
+.form__block__content__label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    margin-bottom: 21px;
+}
+
+.form__block__content__label__text {
+    height: 23px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2A4365;
+    margin-left: 5px;
+}
+
+.form__block__content__input {
+    width: 420px;
+    height: 70px;
+    padding-left: 10px;
+    margin-bottom: 21px;
+    background: #EDF2F7;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 30px;
+}
+
+.form__block__content__control {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__block__content__link {
+    text-decoration: none;
+    height: 23px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #3182CE;
+}
+
+.form__block__content__button__SingIn {
+    width: 201px;
+    height: 61px;
+    background: #2A4365;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.form__block__content__button {
+    margin-top: 30px;
+    width: 100%;
+    height: 61px;
+    background: inherit;
+    border: 2px solid #2A4365;
+    border-radius: 5px;
+    left: 622px;
+    top: 626px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2A4365;
+}
+
+@media (max-width: 666px) {
+    .form__block {
+        width: 300px;
+        height: 400px;
+    }
+
+    .form__block__content {
+        margin: 15px 17px 15px 21px;
+    }
+
+    .form__block__content__label {
+        margin-bottom: 15px;
+    }
+
+    .form__block__content__input {
+        width: 250px;
+        height: 50px;
+        margin-bottom: 12px;
+        font-size: 20px;
+    }
+
+    .form__block__content__control {
+        margin-top: 15px;
+    }
+
+    .form__block__content__link {
+        height: 14px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .form__block__content__button__SingIn {
+        width: 140px;
+    }
+}

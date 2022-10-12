@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 
 const demo = require("../../assets/image/Demo.png")
 
-const TextContent = () => {
+const TextContent:React.FC = () => {
     const navigate = useNavigate()
     return (
         <div className={"mainContent__block"}>
