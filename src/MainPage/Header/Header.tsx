@@ -2,6 +2,7 @@ import React from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import "./Header.css"
 
+const Header:React.FC = () => {
 const Header = () => {
     const navigate = useNavigate()
     return (
