@@ -1,4 +1,4 @@
-.header__block {
+.headerMain__block {
     margin-right: 40px;
     margin-top: 36px;
     display: flex;
@@ -7,7 +7,7 @@
 
 }
 
-.header__block__content{
+.headerMain__block__content{
     width: 400px;
     display: flex;
     flex-direction: row;
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.header__block__content__link {
+.headerMain__block__content__link {
     margin-right: 82px;
     text-decoration: none;
     width: 62px;
@@ -28,7 +28,7 @@
     color: #FFFCFE;
 }
 
-.header__block__content__button {
+.headerMain__block__content__button {
     background-color: inherit;
     width: 109px;
     height: 43px;
@@ -42,14 +42,14 @@
 }
 
 @media (max-width: 666px) {
-    .header__block {
+    .headerMain__block {
         margin-right: 20px;
 
     }
-    .header__block__content{
+    .headerMain__block__content{
         width: 320px;
     }
-    .header__block__content__link {
+    .headerMain__block__content__link {
         margin-right: 15px;
     }
 }

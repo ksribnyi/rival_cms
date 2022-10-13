@@ -1,4 +1,4 @@
-const FooterSvgGenerator = ({id}: { id: string }) => {
+const LogoSvgGenerator = ({id}: { id: string }) => {
     switch (id) {
         case "logo":
             return (
@@ -13,4 +13,4 @@ const FooterSvgGenerator = ({id}: { id: string }) => {
             return null
     }
 }
-export default FooterSvgGenerator
+export default LogoSvgGenerator

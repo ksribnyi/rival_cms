@@ -1,8 +1,10 @@
-import {useFormik} from "formik";
 import React from "react";
+import {useFormik} from "formik";
 import "./LoginForm.css"
 import {NavLink, useNavigate} from "react-router-dom";
-import LoginSvgGenerator from "./LabelSvgGenerator";
+import LabelSvgGenerator from "../../SvgGenerator/LabelSvgGenerator";
+
+
 
 const LoginForm: React.FC = () => {
     const navigate = useNavigate()
@@ -18,7 +20,7 @@ const LoginForm: React.FC = () => {
         <div className={"form__block"}>
             <form className={"form__block__content"} onSubmit={formik.handleSubmit}>
                 <label className={"form__block__content__label"}>
-                    <LoginSvgGenerator id={"email"}/>
+                    <LabelSvgGenerator id={"mail"}/>
                     <span className={"form__block__content__label__text"}>Email Address</span>
                 </label>
                 <input
@@ -30,7 +32,7 @@ const LoginForm: React.FC = () => {
                     value={formik.values.email}
                 />
                 <label className={"form__block__content__label"}>
-                    <LoginSvgGenerator id={"password"}/>
+                    <LabelSvgGenerator id={"lock"}/>
                     <span className={"form__block__content__label__text"}>Password</span>
                 </label>
                 <input

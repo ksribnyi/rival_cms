@@ -1,7 +1,7 @@
 import React from "react";
-import "./Footer.css"
-import FooterSvgGenerator from "./FooterSvgGenerator";
-import {NavLink} from "react-router-dom"
+import "./Footer.css";
+import LogoSvgGenerator from "../../SvgGenerator/LogoSvgGenerator";
+import {NavLink} from "react-router-dom";
 
 const Footer:React.FC = () => {
     return (
@@ -14,7 +14,7 @@ const Footer:React.FC = () => {
                 <NavLink className={"footer__block__content__link"} to="/">Pricing</NavLink>
                 <NavLink className={"footer__block__content__link"} to="/">Our blog</NavLink>
                 <div className={"footer__block__content__logo"}>
-                    <FooterSvgGenerator id={"logo"}/>
+                    <LogoSvgGenerator id={"logo"}/>
                     <NavLink className={"footer__block__content__link"} to="/">RivalCMS</NavLink>
                 </div>
             </nav>

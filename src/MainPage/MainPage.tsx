@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header/Header";
+import HeaderMain from "./HeaderMain/HeaderMain";
 import Footer from "./Footer/Footer";
 import "./MainPage.css"
 import "../assets/image/Demo.png"
@@ -9,7 +9,7 @@ const MainPage: React.FC = () => {
     return (
         <div className={"mainPage__block"}>
             <div className={"mainPage__block__content"}>
-                <Header/>
+                <HeaderMain/>
                 <TextContent/>
             </div>
             <Footer/>
