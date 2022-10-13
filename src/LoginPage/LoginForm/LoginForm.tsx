@@ -4,8 +4,6 @@ import "./LoginForm.css"
 import {NavLink, useNavigate} from "react-router-dom";
 import LabelSvgGenerator from "../../SvgGenerator/LabelSvgGenerator";
 
-
-
 const LoginForm: React.FC = () => {
     const navigate = useNavigate()
     const formik = useFormik({
