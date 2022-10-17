@@ -1,0 +1,58 @@
+.listPages__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.listPages__block__content {
+    margin-top: 36px;
+    padding-bottom: 17px;
+    width: 90%;
+    border-spacing: 0 9px;
+}
+
+.listPages__block__content__thead {
+    height: 60px;
+}
+
+
+
+.listPages__block__content__tbody::before
+{
+    content: '';
+    display: block;
+    height: 23px;
+
+}
+
+.listPages__block__paginator {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-top: 50px;
+}
+
+.listPages__block__paginator__item,
+.listPages__block__paginator__item__active{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.listPages__block__paginator__item{
+    background: #E2E8F0;
+    color: #2C5282;
+}
+
+.listPages__block__paginator__item__active {
+    background: #2A4365;
+    color: #F7FAFC;
+}
+

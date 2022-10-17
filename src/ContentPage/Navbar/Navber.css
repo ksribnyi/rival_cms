@@ -1,0 +1,32 @@
+.navbar__block {
+    height: 100%;
+    width: 26%;
+    max-width: 300px;
+    background: #edf2f7;
+}
+
+.navbar__block__content{
+    margin: 72px 20%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.navbar__block__content__text {
+    margin-bottom: 31px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #4299E1;
+}
+
+.navbar__block__content__link {
+    text-decoration: none;
+    margin-bottom: 31px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2C5282;
+}
