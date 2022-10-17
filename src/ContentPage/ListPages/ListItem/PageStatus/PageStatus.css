@@ -1,0 +1,24 @@
+.pageStatus__block__statusNotPublished,
+.pageStatus__block__statusPublished {
+    display: inline-block;
+    padding: 5px 0 8px;
+    text-align: center;
+    height: 19px;
+    width: 120px;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.pageStatus__block__statusNotPublished {
+    background: indianred;
+    border: 2px solid indianred;
+}
+
+.pageStatus__block__statusPublished {
+    background: #9AE6B4;
+    border: 2px solid #9AE6B4;
+}

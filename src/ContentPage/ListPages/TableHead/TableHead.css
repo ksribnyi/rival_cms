@@ -1,0 +1,36 @@
+.tableHead__block th {
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 5px;
+}
+
+.tableHead__block__button {
+    float: left;
+    background: inherit;
+    border: none;
+    height: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2C5282;
+}
+
+.tableHead__block__button__addNew {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+    width: 135px;
+    height: 42px;
+    left: 1242px;
+    top: 116px;
+    background: #2A4365;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFCFE;
+    border: none;
+}

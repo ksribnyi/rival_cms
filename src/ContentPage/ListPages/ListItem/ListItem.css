@@ -1,0 +1,66 @@
+.listItem__block {
+    height: 90px;
+    background: #F7FAFC;
+    margin-bottom: 10px;
+}
+
+.listItem__block td {
+    width: 26%;
+}
+
+.listItem__block__input,
+.listItem__block__nameSite {
+    margin-left: 26px;
+    width: 40%;
+    background: inherit;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2A4365;
+    outline: none;
+    padding-left: 5px;
+}
+
+.listItem__block__input {
+    border-bottom: 2px solid #2A4365;
+}
+
+.listItem__block__nameSite {
+}
+
+.listItem__block__time {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #2A4365;
+}
+
+
+.listItem__block__nameUser {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #2A4365;
+    margin-right: 23px;
+}
+
+.listItem__block__userStatus {
+    display: inline-block;
+    height: 15px;
+    padding: 5px 0 7px;
+    width: 75px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    background: #2C5282;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFCFE
+}

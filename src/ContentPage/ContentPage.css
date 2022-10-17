@@ -1,0 +1,11 @@
+.contentPage__block {
+    height: 100vh;
+    width: 100vw;
+}
+
+.contentPage__block__content{
+    display: flex;
+    height: 91%;
+    flex-direction: row;
+    background: white;
+}
