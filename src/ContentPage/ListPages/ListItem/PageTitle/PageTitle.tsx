@@ -19,7 +19,6 @@ const PageTitle = ({changeName, CheckName}: IPageTitle) => {
             </td>
         )
     }
-
 }
 
 export default PageTitle
