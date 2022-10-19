@@ -1,7 +1,7 @@
 import "./DropdownMenu.css"
 import ListPageSvgGenerator from "../../../../SvgGenerator/ListPageSvgGenerator";
 import React, {LegacyRef} from "react";
-import DropdownMenuSvgGenerator from "./DropdownMenuSvgGenerator";
+import DropdownMenuSvgGenerator from "../../../../SvgGenerator/DropdownMenuSvgGenerator";
 
 interface IDropdownMenu {
     OpenMenu: () => void,
@@ -13,7 +13,6 @@ interface IDropdownMenu {
 }
 
 const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, container}: IDropdownMenu) => {
-
     return (
         <td className={"dropDown__block"}>
             <div className="dropDown__block__content">

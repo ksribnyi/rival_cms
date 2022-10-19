@@ -37,4 +37,5 @@ const DropdownMenuSvgGenerator = ({id}: { id: string }) => {
             return null
     }
 }
+
 export default DropdownMenuSvgGenerator
