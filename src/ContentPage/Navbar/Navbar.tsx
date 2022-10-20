@@ -9,7 +9,7 @@ const Navbar = () => {
                 <NavLink className={"navbar__block__content__link"} to={"/content/list_pages"}>View site</NavLink>
                 <NavLink className={"navbar__block__content__link"} to={"/content/create_page"}>Create page</NavLink>
                 <NavLink className={"navbar__block__content__link"} to={""}>Blog articles</NavLink>
-                <NavLink className={"navbar__block__content__link"} to={""}>Files</NavLink>
+                <NavLink className={"navbar__block__content__link"} to={"/content/files_page"}>Files</NavLink>
                 <NavLink className={"navbar__block__content__link"} to={""}>Users</NavLink>
                 <NavLink className={"navbar__block__content__link"} to={""}>Subscriptions</NavLink>
                 <NavLink className={"navbar__block__content__link"} to={""}>Archived pages</NavLink>

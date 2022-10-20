@@ -1,13 +1,13 @@
 import "./DropdownMenu.css"
-import ListPageSvgGenerator from "../../../../SvgGenerator/ListPageSvgGenerator";
+import ListPageSvgGenerator from "../../SvgGenerator/ListPageSvgGenerator";
 import React, {LegacyRef} from "react";
-import DropdownMenuSvgGenerator from "../../../../SvgGenerator/DropdownMenuSvgGenerator";
+import DropdownMenuSvgGenerator from "../../SvgGenerator/DropdownMenuSvgGenerator";
 
 interface IDropdownMenu {
     OpenMenu: () => void,
     isOpen: boolean
     ChangeName: () => void,
-    ChangeStatus: () => void,
+    ChangeStatus?: () => void,
     DeletePage: () => void,
     container: LegacyRef<HTMLDivElement>
 }
@@ -27,11 +27,13 @@ const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, c
                             <DropdownMenuSvgGenerator id={"edit"}/>
                             Edit file name
                         </button>
+                        {ChangeStatus &&
                         <button className={"dropDown__block__content__menu__content__button"}
                                 onClick={() => ChangeStatus()}>
                             <DropdownMenuSvgGenerator id={"book_open"}/>
                             Change status
                         </button>
+                        }
                         <button className={"dropDown__block__content__menu__content__button"}
                                 onClick={() => DeletePage()}>
                             <DropdownMenuSvgGenerator id={"trash"}/>

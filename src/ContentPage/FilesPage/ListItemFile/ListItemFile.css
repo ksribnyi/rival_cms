@@ -1,0 +1,40 @@
+.listItemFile__block {
+    height: 76px;
+    width: 100%;
+    background: #F7FAFC;
+}
+
+.listItemFile__block td {
+    width: 25%;
+}
+
+.listItemFile__block td:nth-child(2){
+    width: 36%;
+}
+
+.listItemFile__block__preview {
+    width: 78px;
+    height: 53px;
+    border-radius: 5px;
+    margin-left: 19px;
+}
+
+.listItemFile__block__content {
+    width: 75%;
+}
+
+.listItemFile__block__content__input,
+.listItemFile__block__content__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2A4365;
+    border: none;
+    outline: none;
+    background: inherit;
+}
+
+.listItemFile__block__content__input {
+    border-bottom: 1px solid #2A4365;
+}
