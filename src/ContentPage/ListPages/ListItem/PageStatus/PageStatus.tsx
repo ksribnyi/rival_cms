@@ -5,16 +5,16 @@ const PageStatus = ({status}: { status: boolean }) => {
     if (status) {
         return (
             <td className={"pageStatus__block"}>
-                <span className={"pageStatus__block__statusNotPublished"}>
-                    Not published
+                <span className={"pageStatus__block__statusPublished"}>
+                    Published
                 </span>
             </td>
         )
     } else {
         return (
             <td>
-                <span className={"pageStatus__block__statusPublished"}>
-                    Published
+                <span className={"pageStatus__block__statusNotPublished"}>
+                    Not published
                 </span>
             </td>
         )

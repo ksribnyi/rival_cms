@@ -1,24 +1,30 @@
 import React from "react";
+import {useFormik} from "formik";
 
 interface IPageTitle {
-    changeName: boolean,
-    CheckName: () => void
+    CheckName: (name: string) => void,
+    namePage: string
 }
 
-const PageTitle = ({changeName, CheckName}: IPageTitle) => {
-    if (changeName) {
-        return (
-            <td>
-                <input className={"listItem__block__input"} onBlur={() => CheckName()} value={"Home_page"}/>
-            </td>
-        )
-    } else {
-        return (
-            <td>
-                <span className={"listItem__block__nameSite"}>Home_page</span>
-            </td>
-        )
-    }
+const PageTitle = ({CheckName, namePage}: IPageTitle) => {
+    const formik = useFormik({
+        initialValues: {
+            namePage: namePage
+        },
+        onSubmit: (values: any) => {
+        }
+    })
+    return (
+        <form>
+            <input className={"listItem__block__input"} onBlur={() => CheckName(formik.values.namePage)}
+                   id="namePage"
+                   name="namePage"
+                   type="text"
+                   autoFocus
+                   onChange={formik.handleChange}
+                   value={formik.values.namePage}/>
+        </form>
+    )
 }
 
 export default PageTitle

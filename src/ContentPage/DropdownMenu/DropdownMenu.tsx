@@ -8,11 +8,12 @@ interface IDropdownMenu {
     isOpen: boolean
     ChangeName: () => void,
     ChangeStatus?: () => void,
-    DeletePage: () => void,
-    container: LegacyRef<HTMLDivElement>
+    DeletePage: (id: number) => void,
+    container: LegacyRef<HTMLDivElement>,
+    id: number
 }
 
-const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, container}: IDropdownMenu) => {
+const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, container, id}: IDropdownMenu) => {
     return (
         <td className={"dropDown__block"}>
             <div className="dropDown__block__content">
@@ -35,7 +36,7 @@ const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, c
                         </button>
                         }
                         <button className={"dropDown__block__content__menu__content__button"}
-                                onClick={() => DeletePage()}>
+                                onClick={() => DeletePage(id)}>
                             <DropdownMenuSvgGenerator id={"trash"}/>
                             Delete page
                         </button>

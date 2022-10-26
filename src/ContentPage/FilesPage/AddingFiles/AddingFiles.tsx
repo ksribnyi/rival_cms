@@ -77,11 +77,7 @@ const AddingFiles = () => {
                 </div>
                 <table className={"addingFiles__block__table"}>
                     <tbody>
-                    <ListItemFile/>
-                    <ListItemFile/>
-                    <ListItemFile/>
-                    <ListItemFile/>
-                    <ListItemFile/>
+                    {/*<ListItemFile/>*/}
                     </tbody>
                 </table>
                 <span className={"addingFiles__block__paginator"}>
