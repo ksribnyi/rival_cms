@@ -3,12 +3,23 @@ import React, {useEffect, useRef, useState} from "react";
 import DropdownMenu from "../../DropdownMenu/DropdownMenu";
 import PageStatus from "./PageStatus/PageStatus";
 import PageTitle from "./PageTitle/PageTitle";
+import PageCreationTime from "./PageСreationTime/PageCreationTime";
 
-const ListItem = () => {
+
+const ListItem = ({
+                      deletePage,
+                      setStatus,
+                      setNamePage,
+                      pageStatus,
+                      id,
+                      namePage,
+                      author,
+                      timeCreate,
+                      authorStatus
+                  }: { deletePage: any, setStatus: any, setNamePage: any, pageStatus: boolean, id: number, namePage: string, author: string, timeCreate: number, authorStatus: boolean }) => {
     const container = useRef<HTMLDivElement>(null)
     const [isOpen, setIsOpen] = useState(false)
     const [changeName, setChangeName] = useState(false)
-    const [status, setStatus] = useState(true)
 
     const handleClickOutside = (e: MouseEvent) => {
         if (container?.current && !container?.current?.contains(e.target as Node)) {
@@ -24,16 +35,18 @@ const ListItem = () => {
         setChangeName(true)
     }
 
-    const CheckName = () => {
+    const CheckName = (name: string) => {
+        setNamePage(id, name)
         setChangeName(false)
     }
 
     const ChangeStatus = () => {
         setIsOpen(false)
-        setStatus(!status)
+        setStatus(id, !pageStatus)
     }
 
-    const DeletePage = () => {
+    const DeletePage = (id: number,) => {
+        deletePage(id)
         setIsOpen(false)
     }
 
@@ -41,20 +54,22 @@ const ListItem = () => {
         document.addEventListener("mousedown", handleClickOutside)
         return () => document.removeEventListener("mousedown", handleClickOutside)
     }, [])
-
     return (
         <tr className={"listItem__block"}>
-            <PageTitle changeName={changeName} CheckName={CheckName}/>
             <td>
-                <span className={"listItem__block__time"}>Updated 3 weeks ago</span>
+                {changeName ? <PageTitle CheckName={CheckName} namePage={namePage}/> :
+                    <span className={"listItem__block__nameSite"}>{namePage}</span>}
             </td>
-            <PageStatus status={status}/>
             <td>
-                <span className={"listItem__block__nameUser"}>Joe Blogs</span>
-                <span className={"listItem__block__userStatus"}>Admin</span>
+                <PageCreationTime timeCreate={timeCreate}/>
+            </td>
+            <PageStatus status={pageStatus}/>
+            <td>
+                <span className={"listItem__block__nameUser"}>{author}</span>
+                {authorStatus && <span className={"listItem__block__userStatus"}>Admin</span>}
             </td>
             <DropdownMenu OpenMenu={OpenMenu} isOpen={isOpen} ChangeName={ChangeName} ChangeStatus={ChangeStatus}
-                          DeletePage={DeletePage} container={container}/>
+                          DeletePage={DeletePage} container={container} id={id}/>
         </tr>
     )
 }

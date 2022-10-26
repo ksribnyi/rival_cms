@@ -4,15 +4,24 @@ import {useFormik} from "formik";
 import CreatePageSvgGenerator from "../../../SvgGenerator/CreatePagelSvgGenerator";
 import Popup from "./Popup";
 
-const CreatePageForm = () => {
+const CreatePageForm = ({setPage, countPage}: { setPage: any, countPage: number }) => {
     const [change, setChange] = useState(false)
     const [show, setShow] = useState(false)
     const formik = useFormik({
         initialValues: {
             titlePage: "",
-            files: []
+            file: {}
         },
         onSubmit: (values: any) => {
+            setPage({
+                id: countPage,
+                namePage: values.titlePage,
+                timeCreate: Math.round(Date.now() / 1000),
+                pageStatus: false,
+                author: "dfgf",
+                authorStatus: false,
+                file: values.file
+            })
             setShow(true)
             setTimeout(() => setShow(false), 2000)
         }
@@ -29,7 +38,7 @@ const CreatePageForm = () => {
                         <input className={"createPageForm__block__content__title__input"}
                                id="titlePage"
                                name="titlePage"
-                               type="titlePage"
+                               type="text"
                                autoFocus
                                onBlur={() => setChange(true)}
                                onChange={formik.handleChange}

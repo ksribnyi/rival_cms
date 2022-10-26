@@ -1,8 +1,15 @@
 import "./ListPages.css"
 import TableHead from "./TableHead/TableHead";
+import {connect} from "react-redux";
+import {deletePage, setNamePage, setStatus} from "../../redux/PagesReducer/PagesReducer";
 import ListItem from "./ListItem/ListItem";
 
-const ListPages = () => {
+const ListPages = ({
+                       list,
+                       deletePage,
+                       setStatus,
+                       setNamePage
+                   }: { list: any, deletePage: any, setStatus: any, setNamePage: any }) => {
     return (
         <div className={"listPages__block"}>
             <table className={"listPages__block__content"}>
@@ -10,11 +17,11 @@ const ListPages = () => {
                 <TableHead/>
                 </thead>
                 <tbody className={"listPages__block__content__tbody"}>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
+                {list.pages.map((row: any) => <ListItem key={row.id} deletePage={deletePage} setStatus={setStatus}
+                                                        setNamePage={setNamePage}
+                                                        pageStatus={row.pageStatus} id={row.id} namePage={row.namePage}
+                                                        author={row.author} timeCreate={row.timeCreate}
+                                                        authorStatus={row.authorStatus}/>)}
                 </tbody>
             </table>
             <span className={"listPages__block__paginator"}>
@@ -26,6 +33,9 @@ const ListPages = () => {
 
     )
 }
+const stateProps = (state: any) => ({
+    list: state.pages.list
+})
 
 
-export default ListPages
+export default connect(stateProps, {deletePage, setStatus, setNamePage})(ListPages)

@@ -5,7 +5,7 @@ import {useFormik} from "formik";
 
 const img_test = require("../../../assets/image/img_test.jpg")
 
-const ListItemFile = () => {
+const ListItemFile = (id:number) => {
     const container = useRef<HTMLDivElement>(null)
     const [isOpen, setIsOpen] = useState(false)
     const [fileName, setFileName] = useState(false)
@@ -57,7 +57,7 @@ const ListItemFile = () => {
                         <input className={"listItemFile__block__content__input"}
                                id="fileName"
                                name="fileName"
-                               type="fileName"
+                               type="text"
                                autoFocus
                                onBlur={() => CheckName()}
                                onChange={formik.handleChange}
@@ -71,7 +71,7 @@ const ListItemFile = () => {
             </td>
             <td>
                 <DropdownMenu ChangeName={ChangeName} DeletePage={DeletePage} OpenMenu={OpenMenu} container={container}
-                              isOpen={isOpen}/>
+                              isOpen={isOpen} id={id}/>
             </td>
 
         </tr>
