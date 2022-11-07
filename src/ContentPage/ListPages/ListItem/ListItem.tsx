@@ -2,8 +2,8 @@ import "./ListItem.css"
 import React, {useEffect, useRef, useState} from "react";
 import DropdownMenu from "../../DropdownMenu/DropdownMenu";
 import PageStatus from "./PageStatus/PageStatus";
-import PageTitle from "./PageTitle/PageTitle";
 import PageCreationTime from "./PageСreationTime/PageCreationTime";
+import InputNameItem from "../../InputNameItem/InputNameItem";
 
 
 const ListItem = ({
@@ -57,7 +57,7 @@ const ListItem = ({
     return (
         <tr className={"listItem__block"}>
             <td>
-                {changeName ? <PageTitle CheckName={CheckName} namePage={namePage}/> :
+                {changeName ? <InputNameItem CheckName={CheckName} namePage={namePage}/> :
                     <span className={"listItem__block__nameSite"}>{namePage}</span>}
             </td>
             <td>

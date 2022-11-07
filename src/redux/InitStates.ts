@@ -1,7 +1,7 @@
 export namespace InitStates {
     export const Pages = {
         list: {
-            count : 3,
+            count: 3,
             pages: [
                 {
                     id: 0,
@@ -10,7 +10,7 @@ export namespace InitStates {
                     pageStatus: false,
                     author: "mikola",
                     authorStatus: true,
-                    file : {}
+                    file: {}
                 },
                 {
                     id: 1,
@@ -19,7 +19,7 @@ export namespace InitStates {
                     pageStatus: false,
                     author: "stepan",
                     authorStatus: false,
-                    file : {}
+                    file: {}
                 },
                 {
                     id: 2,
@@ -28,10 +28,15 @@ export namespace InitStates {
                     pageStatus: false,
                     author: "bober",
                     authorStatus: false,
-                    file : {}
+                    file: {}
                 }
             ]
         }
-
+    }
+    export const Files = {
+        list: {
+            count: 0,
+            files: []
+        }
     }
 }

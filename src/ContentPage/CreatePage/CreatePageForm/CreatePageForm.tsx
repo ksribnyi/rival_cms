@@ -10,7 +10,7 @@ const CreatePageForm = ({setPage, countPage}: { setPage: any, countPage: number 
     const formik = useFormik({
         initialValues: {
             titlePage: "",
-            file: {}
+            file: null
         },
         onSubmit: (values: any) => {
             setPage({
@@ -18,7 +18,7 @@ const CreatePageForm = ({setPage, countPage}: { setPage: any, countPage: number 
                 namePage: values.titlePage,
                 timeCreate: Math.round(Date.now() / 1000),
                 pageStatus: false,
-                author: "dfgf",
+                author: "author",
                 authorStatus: false,
                 file: values.file
             })
@@ -62,7 +62,7 @@ const CreatePageForm = ({setPage, countPage}: { setPage: any, countPage: number 
                     </label>
                     <input id="file" name="file" type="file" onChange={(event) => {
                         // @ts-ignore
-                        formik.setFieldValue("files", event.currentTarget.files[0])
+                        formik.setFieldValue("file", event.currentTarget.files[0])
                     }} className="dragDropFile__block__content__input"/>
                 </div>
             </form>

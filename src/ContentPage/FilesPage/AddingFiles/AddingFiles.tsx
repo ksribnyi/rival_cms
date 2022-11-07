@@ -3,13 +3,18 @@ import React, {useState} from "react";
 import {useFormik} from "formik";
 import CreatePageSvgGenerator from "../../../SvgGenerator/FilesPageSvgGenerator";
 import ListItemFile from "../ListItemFile/ListItemFile";
+import UploadFileForm from "./UploadFileForm/UploadFileForm";
 
-const AddingFiles = () => {
+const AddingFiles = ({
+                         list,
+                         setFile,
+                         deleteFile,
+                         setNameFile
+                     }: { list: any, setFile: any, deleteFile: any, setNameFile: any }) => {
     const [active, setActive] = useState([false, false, false, false])
     const formik = useFormik({
         initialValues: {
             search: "",
-            files: []
         },
         onSubmit: (values: any) => {
             console.log(values.files)
@@ -17,18 +22,8 @@ const AddingFiles = () => {
     })
     return (
         <>
-            <form className={"addingFiles__block"} onSubmit={formik.handleSubmit}>
-                <div className={"addingFiles__block__content"}>
-                    <label htmlFor="file" className={"addingFiles__block__content__label"}>
-                        <div className={"addingFiles__block__content__label__click"}>click to upload</div>
-                        <span className={"addingFiles__block__content__label__text"}>Drag & drop multiple files to upload</span>
-                    </label>
-                    <input id="file" name="file" type="file" multiple={true} onChange={(event) => {
-                        // @ts-ignore
-                        formik.setFieldValue("files", event.currentTarget.files)
-                        console.log(event.currentTarget.files)
-                    }} className={"addingFiles__block__content__input"}/>
-                </div>
+            <div className={"addingFiles__block"}>
+                <UploadFileForm setFile={setFile}/>
                 <div className={"addingFiles__block__content__control"}>
                     <div className={"addingFiles__block__content__control__search"}>
                         <button type={"button"} className={"addingFiles__block__content__control__search__button"}>
@@ -77,7 +72,8 @@ const AddingFiles = () => {
                 </div>
                 <table className={"addingFiles__block__table"}>
                     <tbody>
-                    {/*<ListItemFile/>*/}
+                    {list.files.map((file: any) => <ListItemFile key={file.id} file={file} deleteFile={deleteFile}
+                                                                 setNameFile={setNameFile}/>)}
                     </tbody>
                 </table>
                 <span className={"addingFiles__block__paginator"}>
@@ -85,7 +81,7 @@ const AddingFiles = () => {
                     <div className={"addingFiles__block__paginator__item"}>2</div>
                     <div className={"addingFiles__block__paginator__item"}>3</div>
                 </span>
-            </form>
+            </div>
         </>
     )
 }

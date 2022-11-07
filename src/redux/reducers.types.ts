@@ -16,4 +16,19 @@ export namespace ReducersTypes {
         authorStatus: boolean,
         file : {}
     }
+
+    export interface IFiles {
+        list : {
+            count : number,
+            files : Array<IFile>
+        }
+    }
+
+    export interface IFile {
+        file :any
+        id: number,
+        name: string,
+        timeCreate: number,
+        type?: string
+    }
 }
