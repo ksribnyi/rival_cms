@@ -1,11 +1,15 @@
 import "./ListItemFile.css"
 import React, {useEffect, useRef, useState} from "react";
 import DropdownMenu from "../../DropdownMenu/DropdownMenu";
-import {useFormik} from "formik";
+import InputNameItem from "../../InputNameItem/InputNameItem";
+import PreviewFileImage from "./PreviewFileImage/PreviewFileImage";
+import PageCreationTime from "../../ListPages/ListItem/PageСreationTime/PageCreationTime";
 
-const img_test = require("../../../assets/image/img_test.jpg")
-
-const ListItemFile = (id:number) => {
+const ListItemFile = ({
+                          file,
+                          deleteFile,
+                          setNameFile
+                      }: {file: any, deleteFile: any, setNameFile: any }) => {
     const container = useRef<HTMLDivElement>(null)
     const [isOpen, setIsOpen] = useState(false)
     const [fileName, setFileName] = useState(false)
@@ -24,11 +28,13 @@ const ListItemFile = (id:number) => {
         setFileName(true)
     }
 
-    const CheckName = () => {
+    const CheckName = (name: string) => {
+        setNameFile(file.id, name)
         setFileName(false)
     }
 
     const DeletePage = () => {
+        deleteFile(file.id)
         setIsOpen(false)
     }
 
@@ -36,44 +42,21 @@ const ListItemFile = (id:number) => {
         document.addEventListener("mousedown", handleClickOutside)
         return () => document.removeEventListener("mousedown", handleClickOutside)
     }, [])
-
-    const formik = useFormik({
-        initialValues: {
-            fileName: ""
-        },
-        onSubmit: (values: any) => {
-            console.log(values.files)
-        }
-    })
-
     return (
         <tr className={"listItemFile__block"}>
             <td>
-                <img alt={"demo_image"} className={"listItemFile__block__preview"} src={img_test}/>
+                <PreviewFileImage file={file.file}/>
             </td>
             <td>
-                <form  className={"listItemFile__block__content"} onSubmit={formik.handleSubmit}>
-                    {fileName ?
-                        <input className={"listItemFile__block__content__input"}
-                               id="fileName"
-                               name="fileName"
-                               type="text"
-                               autoFocus
-                               onBlur={() => CheckName()}
-                               onChange={formik.handleChange}
-                               value={formik.values.fileName}/> :
-                        <span className={"listItemFile__block__content__text"}>{formik.values.fileName}</span>
-                    }
-                </form>
+                {fileName ? <InputNameItem CheckName={CheckName} namePage={file.name}/> :
+                    <span className={"listItemFile__block__content__text"}>{file.name}</span>
+                }
             </td>
             <td>
-                <span className={"listItem__block__nameUser"}>Upload 2 day ago</span>
+                <PageCreationTime timeCreate={file.timeCreate}/>
             </td>
-            <td>
-                <DropdownMenu ChangeName={ChangeName} DeletePage={DeletePage} OpenMenu={OpenMenu} container={container}
-                              isOpen={isOpen} id={id}/>
-            </td>
-
+            <DropdownMenu ChangeName={ChangeName} DeletePage={DeletePage} OpenMenu={OpenMenu} container={container}
+                          isOpen={isOpen} id={file.id}/>
         </tr>
     )
 }

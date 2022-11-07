@@ -6,12 +6,12 @@ interface IPageTitle {
     namePage: string
 }
 
-const PageTitle = ({CheckName, namePage}: IPageTitle) => {
+const InputNameItem = ({CheckName, namePage}: IPageTitle) => {
     const formik = useFormik({
         initialValues: {
             namePage: namePage
         },
-        onSubmit: (values: any) => {
+        onSubmit: () => {
         }
     })
     return (
@@ -27,4 +27,4 @@ const PageTitle = ({CheckName, namePage}: IPageTitle) => {
     )
 }
 
-export default PageTitle
+export default InputNameItem
