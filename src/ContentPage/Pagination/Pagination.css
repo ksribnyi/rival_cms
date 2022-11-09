@@ -1,0 +1,33 @@
+.Pagination__block {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+
+.Pagination__block__item{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    cursor: pointer;
+    background: #E2E8F0;
+    color: #2C5282;
+}
+
+.active__button {
+    background: #2A4365!important;
+    color: #F7FAFC;
+}
+
+.disabled__button {
+    background-color: transparent !important;
+    cursor: not-allowed;
+    opacity: 0.5;
+}

@@ -66,7 +66,7 @@ const CreatePageForm = ({setPage, countPage}: { setPage: any, countPage: number 
                     }} className="dragDropFile__block__content__input"/>
                 </div>
             </form>
-            {show && <Popup/>}
+            {show && <Popup text={"File add"}/>}
         </>
     )
 }
