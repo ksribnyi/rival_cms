@@ -42,6 +42,16 @@
     font-size: 30px;
 }
 
+.formRegister__block__content__error-massage{
+    margin-top: -15px;
+    font-size: 15px;
+    color: red;
+}
+
+.formRegister__block__content__input__error{
+    border: 2px solid red;
+}
+
 .formRegister__block__content__control {
     width: 100%;
     margin-top: 38px;

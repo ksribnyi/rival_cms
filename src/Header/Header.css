@@ -40,6 +40,37 @@
     color: #FFFFFF;
 }
 
+.header__block_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+    margin-right: 38px;
+}
+
+.header__block_content__plan{
+    display: flex;
+    align-items: center;
+    width: 83px;
+    height: 32px;
+    background: #ED64A6;
+    border-radius: 5px;
+
+}
+.header__block_content__plan p {
+    color: #FFFCFE;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    margin: auto;
+}
+
+.header__block_content__userPhoto {
+    width: 50px;
+    border-radius: 50%;
+
+}
+
 @media (max-width: 666px) {
     .header__block__logo {
         margin-left: 10px;

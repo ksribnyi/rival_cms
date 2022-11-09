@@ -10,3 +10,10 @@ export enum FilesActions {
     DELETE_FILE = "DELETE_FILE",
     SET_NAME_FILE = "SET_NAME_FILE"
 }
+
+export enum AuthActions {
+    REGISTRATION_USER = "REGISTRATION_USER",
+    LOGIN_USER = "LOGIN_USER",
+    LOGOUT_USER = "LOGOUT_USER",
+    SET_STATUS_AUTH = "SET_STATUS_AUTH"
+}

@@ -39,4 +39,20 @@ export namespace InitStates {
             files: []
         }
     }
+    export const Users = {
+        users: [{
+            userName: "admin",
+            email: "admin@email.com",
+            password: "Admin234ss@",
+            admin: true
+        }],
+        activeUser: {
+            userName: "",
+            email: "",
+            password: "",
+            admin: false
+        },
+        statusAuth : false,
+        authorized: false
+    }
 }
