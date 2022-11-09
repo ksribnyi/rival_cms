@@ -1,7 +1,7 @@
 export namespace InitStates {
     export const Pages = {
         list: {
-            count: 3,
+            count: 6,
             pages: [
                 {
                     id: 0,
@@ -23,6 +23,33 @@ export namespace InitStates {
                 },
                 {
                     id: 2,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 3,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 4,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 5,
                     namePage: "aaaa",
                     timeCreate: 1666655603277 / 1000,
                     pageStatus: false,
@@ -53,6 +80,6 @@ export namespace InitStates {
             admin: false
         },
         statusAuth : false,
-        authorized: false
+        authorized: true
     }
 }

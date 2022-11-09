@@ -4,6 +4,8 @@ import {useFormik} from "formik";
 import CreatePageSvgGenerator from "../../../SvgGenerator/FilesPageSvgGenerator";
 import ListItemFile from "../ListItemFile/ListItemFile";
 import UploadFileForm from "./UploadFileForm/UploadFileForm";
+import Pagination from "../../Pagination/Pagination";
+import usePagination from "../../../hooks/usePagination";
 
 const AddingFiles = ({
                          list,
@@ -12,6 +14,19 @@ const AddingFiles = ({
                          setNameFile
                      }: { list: any, setFile: any, deleteFile: any, setNameFile: any }) => {
     const [active, setActive] = useState([false, false, false, false])
+    const {
+        firstContentIndex,
+        lastContentIndex,
+        nextPage,
+        prevPage,
+        page,
+        gaps,
+        setPage,
+        totalPages,
+    } = usePagination({
+        contentPerPage: 5,
+        count: list.files.length,
+    })
     const formik = useFormik({
         initialValues: {
             search: "",
@@ -72,15 +87,14 @@ const AddingFiles = ({
                 </div>
                 <table className={"addingFiles__block__table"}>
                     <tbody>
-                    {list.files.map((file: any) => <ListItemFile key={file.id} file={file} deleteFile={deleteFile}
-                                                                 setNameFile={setNameFile}/>)}
+                    {list.files.slice().reverse().slice(firstContentIndex, lastContentIndex).map((file: any) => <ListItemFile
+                        key={file.id} file={file} deleteFile={deleteFile}
+                        setNameFile={setNameFile}/>)}
                     </tbody>
                 </table>
-                <span className={"addingFiles__block__paginator"}>
-                    <div className={"addingFiles__block__paginator__item__active"}>1</div>
-                    <div className={"addingFiles__block__paginator__item"}>2</div>
-                    <div className={"addingFiles__block__paginator__item"}>3</div>
-                </span>
+                {1 < totalPages &&
+                <Pagination gaps={gaps} nextPage={nextPage} page={page} prevPage={prevPage} setPage={setPage}
+                            totalPages={totalPages}/>}
             </div>
         </>
     )
