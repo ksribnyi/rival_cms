@@ -26,8 +26,11 @@ const ListPages = ({
         contentPerPage: 5,
         count: list.pages.length,
     })
+    const PagePagination = list.pages.slice(firstContentIndex, lastContentIndex)
+    if(PagePagination.slice().length < 1 ){
+        prevPage()
+    }
     return (
-
         <div className={"listPages__block"}>
             <table className={"listPages__block__content"}>
                 <thead className={"listPages__block__content__thead"}>

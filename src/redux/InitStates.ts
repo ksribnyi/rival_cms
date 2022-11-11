@@ -56,6 +56,60 @@ export namespace InitStates {
                     author: "bober",
                     authorStatus: false,
                     file: {}
+                },
+                {
+                    id: 6,
+                    namePage: "asdasd",
+                    timeCreate: 1666788862,
+                    pageStatus: false,
+                    author: "mikola",
+                    authorStatus: true,
+                    file: {}
+                },
+                {
+                    id: 7,
+                    namePage: "dddd",
+                    timeCreate: 1663665603277 / 1000,
+                    pageStatus: false,
+                    author: "stepan",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 8,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 9,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 10,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
+                },
+                {
+                    id: 11,
+                    namePage: "aaaa",
+                    timeCreate: 1666655603277 / 1000,
+                    pageStatus: false,
+                    author: "bober",
+                    authorStatus: false,
+                    file: {}
                 }
             ]
         }
@@ -80,6 +134,6 @@ export namespace InitStates {
             admin: false
         },
         statusAuth : false,
-        authorized: true
+        authorized: false
     }
 }

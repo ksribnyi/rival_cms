@@ -57,7 +57,7 @@ const ListItem = ({
     return (
         <tr className={"listItem__block"}>
             <td>
-                {changeName ? <InputNameItem CheckName={CheckName} namePage={namePage}/> :
+                {changeName ? <InputNameItem CheckName={CheckName} nameItem={namePage}/> :
                     <span className={"listItem__block__nameSite"}>{namePage}</span>}
             </td>
             <td>

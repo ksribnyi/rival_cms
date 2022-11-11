@@ -1,28 +1,36 @@
 import React from "react";
 import {useFormik} from "formik";
+import NameFileValidate from "../../utils/NameFile.shema";
 
 interface IPageTitle {
     CheckName: (name: string) => void,
-    namePage: string
+    nameItem: string
 }
 
-const InputNameItem = ({CheckName, namePage}: IPageTitle) => {
+const InputNameItem = ({CheckName, nameItem}: IPageTitle) => {
     const formik = useFormik({
         initialValues: {
-            namePage: namePage
+            nameItem: nameItem
         },
-        onSubmit: () => {
+        validationSchema: NameFileValidate,
+        onSubmit: (values) => {
+            CheckName(values.nameItem)
         }
     })
     return (
         <form>
-            <input className={"listItem__block__input"} onBlur={() => CheckName(formik.values.namePage)}
+            <input className={formik.errors.nameItem && formik.touched.nameItem ?
+                "listItem__block__input listItem__block__input__error" :
+                "listItem__block__input"}
+                   onBlur={() => {
+                       formik.handleSubmit()
+                   }}
                    id="namePage"
                    name="namePage"
                    type="text"
                    autoFocus
                    onChange={formik.handleChange}
-                   value={formik.values.namePage}/>
+                   value={formik.values.nameItem}/>
         </form>
     )
 }
