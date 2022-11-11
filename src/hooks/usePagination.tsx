@@ -19,8 +19,8 @@ const usePagination = ({contentPerPage, count}: { contentPerPage: number, count:
     const [pagesInBetween, setPagesInBetween] = useState<number[]>([])
 
     useEffect(() => {
-        if (pageCount > 2) {
-            const temp = new Array(pageCount - 2).fill(1).map((_, i) => i + 2)
+        if (pageCount > 1) {
+            const temp = new Array(pageCount).fill(0).map((_, i) => i + 1)
             setPagesInBetween(temp)
         }
     }, [pageCount])

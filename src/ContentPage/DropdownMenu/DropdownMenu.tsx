@@ -14,6 +14,12 @@ interface IDropdownMenu {
 }
 
 const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, container, id}: IDropdownMenu) => {
+    const ConfirmDelete = ( ) => {
+        const text = "Do you want to delete the page?"
+        if(window.confirm(text)) {
+            DeletePage(id)
+        }
+    }
     return (
         <td className={"dropDown__block"}>
             <div className="dropDown__block__content">
@@ -36,7 +42,7 @@ const DropdownMenu = ({OpenMenu, isOpen, ChangeName, ChangeStatus, DeletePage, c
                         </button>
                         }
                         <button className={"dropDown__block__content__menu__content__button"}
-                                onClick={() => DeletePage(id)}>
+                                onClick={() => ConfirmDelete()}>
                             <DropdownMenuSvgGenerator id={"trash"}/>
                             Delete page
                         </button>

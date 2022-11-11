@@ -48,7 +48,7 @@ const ListItemFile = ({
                 <PreviewFileImage file={file.file}/>
             </td>
             <td>
-                {fileName ? <InputNameItem CheckName={CheckName} namePage={file.name}/> :
+                {fileName ? <InputNameItem CheckName={CheckName} nameItem={file.name}/> :
                     <span className={"listItemFile__block__content__text"}>{file.name}</span>
                 }
             </td>

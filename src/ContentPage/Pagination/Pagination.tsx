@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Pagination.css"
 
 const Pagination = ({
@@ -16,6 +16,9 @@ const Pagination = ({
     setPage: any,
     totalPages: number,
 }) => {
+    useEffect(()=> {
+
+    },[gaps])
     return (
         <div className="Pagination__block">
             <button
@@ -23,12 +26,6 @@ const Pagination = ({
                 className={`Pagination__block__item ${page === 1 && "disabled__button"}`}
             >
                 &larr;
-            </button>
-            <button
-                onClick={() => setPage(1)}
-                className={`Pagination__block__item ${page === 1 && "active__button"}`}
-            >
-                1
             </button>
             {gaps.before ? "..." : null}
             {gaps.paginationGroup.map((el: any) => (
@@ -41,12 +38,6 @@ const Pagination = ({
                 </button>
             ))}
             {gaps.after ? "..." : null}
-            <button
-                onClick={() => setPage(totalPages)}
-                className={`Pagination__block__item ${page === totalPages && "active__button"}`}
-            >
-                {totalPages}
-            </button>
             <button
                 onClick={nextPage}
                 className={`Pagination__block__item ${page === totalPages && "disabled__button"}`}
